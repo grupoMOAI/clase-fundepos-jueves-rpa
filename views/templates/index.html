@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="card">
-    <p>Suba un archivo Excel (.xlsx o .xls) para ver las primeras 5 filas.</p>
+    <h2 style="margin-top:0;">Cargar informe</h2>
+    <p>Suba un archivo Excel (.xlsx o .xls) con el informe a revisar. Se mostrarán las primeras 5 filas con su encabezado para validar el contenido antes de procesarlo.</p>
     <form action="{{ url_for('excel.upload') }}" method="post" enctype="multipart/form-data">
         <input type="file" name="file" accept=".xlsx,.xls" required>
         <br>
