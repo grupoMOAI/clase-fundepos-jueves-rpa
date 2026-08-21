@@ -2,10 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Excel Preview{% endblock %}</title>
+    <title>{% block title %}Aplicativo - Control e Informes{% endblock %}</title>
     <style>
         body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        h1 { color: #333; }
+        header { border-bottom: 2px solid #2c6fdc; padding-bottom: 0.75rem; margin-bottom: 1.5rem; }
+        h1 { color: #2c6fdc; margin: 0 0 0.25rem; }
+        .subtitle { margin: 0; color: #555; font-size: 0.95rem; }
         .card { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; background: #fafafa; }
         table { border-collapse: collapse; width: 100%; margin-top: 1rem; background: white; }
         th, td { border: 1px solid #ccc; padding: 0.5rem 0.75rem; text-align: left; }
@@ -16,7 +18,10 @@
     </style>
 </head>
 <body>
-    <h1>{% block header %}Vista previa de Excel{% endblock %}</h1>
+    <header>
+        <h1>{% block header %}Aplicativo - Control e Informes{% endblock %}</h1>
+        <p class="subtitle">Herramienta para cargar y previsualizar informes en Excel.</p>
+    </header>
     {% with messages = get_flashed_messages() %}
         {% for msg in messages %}<div class="flash">{{ msg }}</div>{% endfor %}
     {% endwith %}
