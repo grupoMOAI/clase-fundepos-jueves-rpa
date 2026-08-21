@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <p><strong>Archivo:</strong> {{ filename }}</p>
+    <p>Primeras 5 filas:</p>
+    <table>
+        <thead>
+            <tr>{% for h in headers %}<th>{{ h }}</th>{% endfor %}</tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p style="margin-top:1.5rem;">
+        <a href="{{ url_for('excel.index') }}" class="btn">Subir otro archivo</a>
+    </p>
+</div>
+{% endblock %}
